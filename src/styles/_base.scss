@@ -1,0 +1,41 @@
+.App {
+    main{
+        display: flex;
+    }
+    .btnNav{
+        background: transparent;
+        border: none;
+        border-top: solid 2px #fff;
+        margin: 0 0 0 14px;
+        border-radius: 0%;
+        height: 20px;
+        padding: 0;
+        width: 24px;
+
+        &::after{
+            border-bottom: solid 2px #fff;
+            width: 24px;
+            display: inline-block;
+            content: '';
+            margin: 0 0 0px 0px;
+            position: absolute;
+            left: 14px;
+            top: 23px;
+        }
+        &::before{
+            border-top: solid 2px #fff;
+            width: 24px;
+            display: inline-block;
+            content: '';
+        }
+    }
+    .btn-check:focus+.btn-primary, .btn-primary:focus{
+        box-shadow: 0 0 0 0.25rem #ffffff00;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .btnNav{
+          display: none;
+        }
+      }
+}

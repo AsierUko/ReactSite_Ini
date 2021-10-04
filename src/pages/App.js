@@ -1,76 +1,118 @@
 /* eslint-disable no-undef */
-import Alert from 'react-bootstrap/Alert';
+import "./App.scss";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+
+import Collapse from 'react-bootstrap/Collapse'
+import Button from 'react-bootstrap/Button'
+
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Popover from 'react-bootstrap/Popover'
+
 import logo from "../resources/logo darwinex.svg";
-import HelloMessage from "../components/HelloMessage.js";
-import Spinner from 'react-bootstrap/Spinner'
-import Carousel from 'react-bootstrap/Carousel'
-import "./App.css";
+
+
+import CarouseHome from "../components/CarouseHome.js";
+import Carouselmov from "../components/Carouselmov";
+import ColIzquier from "../components/ColIzquier.js";
 
 
 function App() {
+  const [open, setOpen] = useState(false);
+
+
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Body>
+       <p>Inversion</p>
+       <p>Retorno</p>
+       <p>Drawdown</p>
+       <p>D-Score</p>
+      </Popover.Body>
+    </Popover>
+  );
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://darwinex.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Darwinex Homep
-        </a>
+        <div className="header">
+          <Button 
+            onClick={() => setOpen(!open)}
+            aria-controls=""
+            aria-expanded={open}
+            className="btnNav">
+          </Button>
+          <div className="header__wraplogo">
+            <img src={logo} className="header__logo" alt="logo" />
+          </div>
+        </div>
       </header>
-      <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=First slide&bg=373940"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=Second slide&bg=282c34"
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="holder.js/800x400?text=Third slide&bg=20232a"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-
-      <Spinner animation="border" />
-      <HelloMessage name="Taylor" />
-
-      <Alert dismissible variant="danger">
-        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-        <p>
-          asdfas dfasd fasdf asdf 
-        </p>
-      </Alert>
+      <main>
+        <aside className="nav">
+          <Collapse in={open} dimension="width">
+            <div id="example-collapse-text">
+              <div style={{width: '180px'}} className="nav__body">
+                <div className="nav__principal">
+                  <div>
+                    <i className="list"></i>
+                    <span>Principal</span>
+                  </div>
+                  <ul className="nav__item-list">
+                    <li className="exp">Exportar</li>
+                    <li className="all">All Darwing</li>
+                    <li className="darwinia">Darwinia</li>
+                  </ul>
+                </div>
+                <div>
+                  <ColIzquier />
+                </div>
+              </div>
+            </div>
+          </Collapse>
+        </aside>
+        <section className="portfolio">
+          <div className="portfolio__user">
+            <div className="portfolio__avatar">AIS</div>
+            <div className="portfolio__avatarText">
+              <span>Estrategia Nombre</span>
+              <span>Nombre de Usuario
+                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                  <i variant="success">+2</i>
+                </OverlayTrigger>
+              </span>
+            </div>
+          </div>
+          <div className="portfolio__description nav__return">
+            <p>TSM is absolutely passionate about automated, systematic trading, and to drive system lorem ipsum dolor sit amet… </p>
+          </div>
+          <div className="portfolio__item">
+            <div className="portfolio__nav">
+              <div className="nav__item-list">
+                <i className="list"></i>
+                <i className="listGrid"></i>
+                <div className="portfolio__wrap__checkbox">
+                    <p>In Portfolio</p>
+                    <label class="portfolio__switch">
+                      <input type="checkbox" />
+                      <div></div>
+                    </label>
+                </div>
+              </div>
+              <div className="nav__return">
+              <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                <p variant="success">Order by Return</p>
+              </OverlayTrigger>
+              </div>
+            </div>
+            <div className="portfolio__total">
+              <div className="portfolio__carousel">
+                <CarouseHome className="portfolio__carouselDes"/>
+                <Carouselmov className="portfolio__carouselMov"/>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

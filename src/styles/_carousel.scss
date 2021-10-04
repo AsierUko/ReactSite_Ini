@@ -1,0 +1,174 @@
+.portfolio{
+    &__carouselMov{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    &__carouselDes{  
+        display: none;
+        .portfolio__ItemBlock{
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-around;
+        }
+        .carousel-indicators{
+          display: none;
+        }
+        .carousel-control-next, .carousel-control-prev{
+          height: 27px;
+          top: -21px;
+          width: 27px;
+          border: solid 1px;
+          border-radius: 50%;
+        }
+        .carousel-control-prev{
+          left: inherit;
+          right: 49px;
+        }
+        .carousel-control-next-icon {
+          background-size: 16px;
+        }
+        .carousel-control-prev-icon {
+          background-size: 16px;
+        }
+      }
+    &__encont{
+      display: inline-block;
+      width: 100%;
+      padding: 20px 0 0;
+      
+    }
+    &__encont.bis{
+      display: none;
+    }
+    .card{
+        margin: 30px 0;
+        background: #2c2c2c;
+        .list-group-flush{
+          .list-group-item{
+            background: #2c2c2c;
+            color: #7b7b7b;
+            border: #505050;
+            border-top: solid 1px #505050;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            :nth-child(2){
+              color: cornsilk;
+            }
+            .clororExito{
+              color: #aaff00;
+            }
+            .clororAlert{
+                color: #ff4141;
+            }
+          }
+        }
+        .card-body .card-title{
+          justify-content: space-between;
+          margin: 0;
+          display: flex;
+          .folder{
+            background-image: url('../resources/folder-icon.svg');
+            background-repeat: no-repeat;
+            width: 26px;
+            height: 26px;
+            background-position: 0px 5px;
+          }
+          .num{
+            background-image: url('../resources/all-darwins-icon.svg');
+            background-repeat: no-repeat;
+            width: 26px;
+            height: 26px;
+            background-position: 5px 5px;
+            color: #000;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+          }
+        }
+        .card-header{
+          border-bottom: none;
+        }
+        .card-img-top{
+          margin: 30px auto;
+          width: 210px;
+        }
+      }
+    &__carouselMov__header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .empresa{
+        padding: 0 0 0 23px;
+      }
+      .empresa::before{
+        content: '$';
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: #fff;
+        border-radius: 50%;
+        margin-top: 0px;
+        position: absolute;
+        left: 14px;
+        color: #000;
+        text-align: center;
+        font-weight: bold;
+      }
+      .empresa.nti::before{
+        content: '';
+        background: #de9f3f;
+      }
+      .empresa.orange::before{
+        content: '$';
+        background: #fb6533;
+      }
+      .empresa.mora::before{
+        content: '$';
+        background: #b05aa6;
+      }
+      .btnTrade{
+        border: solid 1px #aaff00;
+        border-radius: 16px 16px 16px 16px;
+        padding: 3px 18px;
+        margin: 0 0 0 10px;
+      }
+      .btnTrade:hover{
+        color: #202020;
+        border: solid 1px #fff;
+        background: #fff;
+      }
+      .text{
+        color: #aaff00;
+      }
+
+    }
+    .placeholder-glow.card-text{
+      width: 100%;
+      display: flex;
+      > span{
+        width: 100%;
+      }
+    }
+
+    .spinner-border{
+      position: absolute;
+      top: 102px;
+      left: 123px;
+    }
+
+
+    @media screen and (min-width: 768px) {
+      &__carouselMov{
+        display: none;
+      }
+      &__carouselDes{
+        display: block;
+      }
+      &__encont.bis{
+        display: block;
+      }
+    }
+}

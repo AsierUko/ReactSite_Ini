@@ -1,0 +1,111 @@
+.portfolio{
+  width: 100%;
+  background: #202020;
+  color: #fff;
+  padding: 15px;
+  &__user{
+    display: flex;
+    margin: 30px 0 15px 0;
+  }
+  &__avatar{
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+  }
+  &__avatarText{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 14px;
+    line-height: 20px;
+    i{
+      background: #4f4f4f;
+      border-radius: 4px;
+      height: 20px;
+      width: 20px;
+      display: inline-block;
+      align-items: center;
+      padding: 1px;
+      margin-left: 10px;
+      font-weight: bold;
+      color: #0fb3df;
+      cursor: pointer;
+    }
+  }
+  &__description{
+    display: flex;
+    width: 100%;
+    margin: 0 0 15px 0;
+    i{
+      margin-left: 20px;
+    }
+  }
+  &__item{
+    border-top: solid 1px #fff;
+    padding: 20px 0 0 0;
+  }
+  &__nav{
+    background: #363636;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav__item-list{
+      display: flex;
+      align-items: center;
+      padding: 0 27px 0 0;
+      border-right: solid 1px #fff;
+      
+    }
+  }
+  &__wrap__checkbox{
+    display: flex;
+    align-items: center;
+
+  }
+  &__switch{
+    font-size: 20px;
+    height: 1em;
+    width: 2.3em;
+    background: #1b739b;
+    align-items: center;
+    border-radius: 1em;
+    display: flex;
+    margin-left: 10px;
+    input{
+      position: absolute;
+      opacity: 0;
+    }
+    div{
+      height: 1.2em;
+      width: 1.2em;
+      border-radius: 1em;
+      background: #00b0ff;
+      box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+      -webkit-transition: all 300ms;
+         -moz-transition: all 300ms;
+              transition: all 300ms;
+    }
+    input:checked + div {
+      -webkit-transform: translate3d(100%, 0, 0);
+      -moz-transform: translate3d(100%, 0, 0);
+           transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  
+}
+@media screen and (min-width: 768px) {
+  .portfolio{
+    height: calc(100vh - 49px);
+    &__wrap__checkbox {
+      margin: 0 0 0 9px;
+  }
+  }
+}

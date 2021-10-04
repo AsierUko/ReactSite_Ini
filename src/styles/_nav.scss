@@ -1,0 +1,175 @@
+.nav{
+  display: inline-block;
+  position: fixed;
+  z-index: 22;
+    &__body{
+        width: 180px;
+        background: #2c2c2c;
+        color: #fff;
+        height: calc(100vh - 49px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .collapse{
+        margin: 0 0 0 0px;
+    }
+    .collapse:not(.show).nav {
+        display: block;
+        margin: 0 0 0 -120px;
+    }
+    &__principal{
+        div {
+          display: flex;
+          padding: 10px 0px 6px 0px;
+          background: #3a3a3a;
+          i {
+              background-image: url('../resources/list-icon.svg');
+              width: 17px;
+              height: 26px;
+              background-repeat: no-repeat;
+              display: flex;
+              background-position: 8.1px 4px;
+              margin: 0 9px 0 0;
+          }
+        }
+    }
+    &__return{
+      padding: 0 33px 0 0;
+      position: relative;
+      ::before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        right: 11px;
+        border-bottom: solid 1px #ffffff;
+        top: 3px;
+        border-left: solid 1px #fff;
+        transform: rotate(-48deg);
+      }
+      :hover{
+        cursor: pointer;
+      }
+    }
+    &__item-list{
+      list-style: none;
+      li{
+        padding: 9px 0 9px 48px;
+        background-repeat: no-repeat;
+        background-position: 21.1px 12px;
+      }
+      .list{
+        &::before{
+          background-image: url('../resources/list-icon.svg');
+          background-repeat: no-repeat;
+          content: '';
+          background-position: 12px 16px;
+          width: 49px;
+          height: 49px;
+          display: inline-block;
+        }
+        width: 49px;
+        height: 49px;
+      }
+      .list:hover{
+        background: #2b2b2b;
+      }
+      .listGrid{
+        display: none;
+        width: 49px;
+        height: 49px;
+        &::before{
+          background-position: 7px 5px;
+          background-size: 37px;
+          background-repeat: no-repeat;
+          background-image: url('../resources/Grid.png');
+          display: inline-block;
+          width: 49px;
+          height: 49px;
+          content: '';
+        } 
+      }
+      .listGrid:hover{
+        background: #2b2b2b;
+        &::before{
+          border: solid 2px #00c9ff;
+          background-repeat: no-repeat;
+          background-image: url('../resources/Grid-Hover.png');
+        }
+      }
+      .exp{
+        background-image: url('../resources/explorar-icon.svg');
+      }
+      .all{
+        background-image: url('../resources/all-darwins-icon.svg');
+      }
+      .darwinia{
+        background-image: url('../resources/darwinia-icon.svg');
+      }
+      .frame{
+        background-image: url('../resources/hall-offame-icon.svg');
+      }
+      .fees{
+        background-image: url('../resources/performance-icon.svg');
+        background-position: 18px 16px;
+      }
+      .rebates{
+        background-image: url('../resources/rebates-icon.svg');
+      }
+      .widgets{
+        background-image: url('../resources/widgets-icon.svg');
+      }
+      :hover{
+        cursor: pointer;
+      }
+    }
+    &__areYoua{
+      background: #3ca0cc;
+      padding: 10px 0px 10px 0;
+      div{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+      }
+    }
+    &__areYoua{
+      background: #3192be;
+    }
+    .area_hid{
+      padding: 12px 0 7px 0;
+      cursor: pointer;
+    }
+    &__create-link{
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 6px;
+      border-radius: 36px;
+      width: 90%;
+      text-align: center;
+      margin: 5px 9px;
+      border-top: solid 1px #fff;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav{
+    position: relative;
+    .collapse:not(.show) {
+      display: block;
+    }
+    &__item-list .listGrid{
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav__item-list .listGrid{
+    display: block;
+  }
+}
+
+

@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.min';
 import "./index.css";
 import App from "./pages/App";
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

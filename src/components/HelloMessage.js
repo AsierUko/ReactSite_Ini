@@ -2,7 +2,7 @@ function HelloMessage(props) {
     return (
       <div className="HelloMessage">
         <div>
-            Hola aaaaaaaaaaaaa
+            Hola  {props.name}
         </div>
       </div>
     );
