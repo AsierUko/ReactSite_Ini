@@ -94,7 +94,7 @@
       .listGrid:hover{
         background: #2b2b2b;
         &::before{
-          border: solid 2px #00c9ff;
+          //border: solid 2px #00c9ff;
           background-repeat: no-repeat;
           background-image: url('../resources/Grid-Hover.png');
         }

@@ -17,6 +17,8 @@ import Carouselmov from "../components/Carouselmov";
 import ColIzquier from "../components/ColIzquier.js";
 
 
+
+
 function App() {
   const [open, setOpen] = useState(false);
 
