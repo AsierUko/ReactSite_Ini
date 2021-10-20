@@ -1,3 +1,0 @@
-- El tiempo realizado para la prueba es de unas 10h.
-
-No he podido realizar la vista en listado por el tiempo pero me hubiera gustado. La maquetación para varios dispositivos me ha comido tiempo.El desarrollo en javaScript del carrusel, para mostrar más tarjetas o menos en función de la ventana del navegador, al no saber React me ha costado.He perdido tiempo documentándome sobre React, pero me ha gustado mucho, eso es lo bueno. Parecido a Vue.js.
